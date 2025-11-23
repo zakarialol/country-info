@@ -1,0 +1,96 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-size: 16px;
+}
+:root{
+    --blue-color:hsl(213, 91%, 66%);
+    --white-color: white;
+    --value-20px:20px;
+    --value-10px: 10px;
+    --value-300px:300px;
+    --value-50px: 50px;
+    --margin-Bottom-10px: 10px;
+    --margin-Bottom-20px: 20px;
+}
+main{
+    height: 100vh;
+    background-color: var(--blue-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: url(https://flagcdn.com/ma.svg); */
+}
+.inputHolder{
+    background: var(--white-color);
+    /* padding: var(--value-20px); */
+    border-radius: var(--value-10px);
+}
+#search-input{
+    border: none;
+    border-bottom:solid 2px var(--blue-color);
+    padding: var(--value-10px);
+    min-width: var(--value-300px);
+    outline: none;
+}
+.search-Btn{
+    color: var(--white-color);
+    background: var(--blue-color);
+    padding: var(--value-10px);
+    min-width: 100px;
+    border: none;
+    border-radius: 10px;
+}
+.inputHolder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: var(--margin-Bottom-20px);
+}
+.main{
+    background: white;
+    padding: var(--value-20px);
+    border-radius: var(--value-10px);
+    /* background: url(https://flagcdn.com/ma.svg); */
+}
+.infoDiv div{
+    display: flex;
+    gap: var(--value-20px);
+}
+.infoDiv div:not(:last-child){
+    margin-bottom: var(--margin-Bottom-10px);
+}
+.infoDiv div p {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #007f8f;
+    /* font-weight: bold; */
+}
+.infoDiv div span{
+    color: #4b4b4b;
+}
+.flag-holder{
+    min-width: 200px;
+    height: 200px;
+    background: #efefef;
+    padding: 1px;
+}
+.flag-holder img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.FlagAndNameHolder{
+    margin-bottom: var(--margin-Bottom-20px);
+}
+.FlagAndNameHolder .countryName{
+    text-align: center;
+    margin-top: var(--margin-Bottom-20px);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
