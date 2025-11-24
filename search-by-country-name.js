@@ -40,9 +40,6 @@ function searchBtnEventFunc(){
 }
 // function to display items 
 function displayItemsFunc(data){
-    console.log(data)
-    console.log(data.currencies,'currenices')
-    console.log(Object.values(data.currencies))
     let Currencies = Object.values(data.currencies)
     let Languages = Object.values(data.languages)
     let GoogleMaps = Object.values(data.maps)
