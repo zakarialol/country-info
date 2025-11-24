@@ -94,3 +94,8 @@ main{
     font-weight: bold;
     font-size: 1.5rem;
 }
+.errorMessage h3{
+    font-family: emoji;
+    color: #cd2d64;
+    letter-spacing: 1px;
+}

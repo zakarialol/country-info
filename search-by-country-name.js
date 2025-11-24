@@ -1,6 +1,7 @@
 // selecting the elements from the dom
 const searchInput = document.getElementById('search-input')
 const searchBtn = document.querySelector('.search-Btn')
+const errorMessage = document.querySelector('.errorMessage')
 const infoDivAboutCountries = document.querySelector('.info-div-about-country')
 let caretColor = getComputedStyle(document.documentElement).getPropertyValue('--blue-color').trim()
 let Flags;
@@ -34,8 +35,19 @@ function searchBtnEventFunc(){
         // let langauges = document.querySelector('languages span')
         flagHolder.src= Flags[1]
 
-    }).catch(response=>{
-        console.error('error',response)
+    }).catch(()=>{
+        if(countryName.trim().length === 0){
+            errorMessage.innerHTML = `<h3>write a name please</h3>`
+            setTimeout(()=>{
+                errorMessage.innerHTML = ``
+            },1000)
+        }else{
+            errorMessage.innerHTML = `<h3>please enter valid name</h3>`
+                setTimeout(()=>{
+                errorMessage.innerHTML = ``
+            },1000)
+        }
+        // console.error('error',response)
     })
 }
 // function to display items 
