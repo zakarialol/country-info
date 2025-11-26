@@ -17,11 +17,11 @@ searchBtn.addEventListener('click',searchBtnEventFunc)
 
 function searchBtnEventFunc(){
     let countryName = searchInput.value.trim()
-    let contriesUrl = `https://restcountries.com/v3.1/all?fields=name,translations,capital,corrency,flags,population,currencies,languages,continents,maps`
+    let contriesUrl = `https://restcountries.com/v3.1/all?fields=name,translations,capital,flags,population,currencies,languages,continents,maps`
     fetch(contriesUrl)
     .then(response=> {
         if(!response.ok){
-            throw new Error(`state from fetch ddin't go well`);
+            throw new Error(`fetch error`);
         }
         return response.json()
     })
@@ -29,6 +29,7 @@ function searchBtnEventFunc(){
         return handleTypedCountryNameFunc(res,countryName)
     })
     .then(response =>{
+        if(!response) throw new Error('country not found')
         const html = displayItemsFunc(response)
         infoDivAboutCountries.innerHTML = html
         let flagHolder = document.querySelector('.flag-holder img')
